@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build &&  && node ./dist/cli.js --template $TEMPLATE --apiKey $API_KEY --no-cache --overwrite ."
+    "start": "npm run build && ./credentials.sh && node ./dist/cli.js --template $RF_TEMPLATE --apiKey $RF_API_KEY --no-cache --overwrite ."
   },
   "author": "Jakub Pomykała <jakub@jpomykala.com>",
   "license": "MIT",
