@@ -37,5 +37,6 @@ src/css/*.css
 
 dist
 .idea
+render_test
 
 credentials.sh

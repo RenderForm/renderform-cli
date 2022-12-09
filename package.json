@@ -1,0 +1,34 @@
+{
+  "name": "renderform-cli",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "bin/",
+    "dist/"
+  ],
+  "bin": {
+    "render": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build &&  && node ./dist/cli.js --template $TEMPLATE --apiKey $API_KEY --no-cache --overwrite ."
+  },
+  "author": "Jakub Pomykała <jakub@jpomykala.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3",
+    "@types/node": "^18.11.10",
+    "@types/axios": "^0.14.0",
+    "@types/yargs": "^17.0.17",
+    "@types/glob": "^8.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "colorette": "^2.0.19",
+    "glob": "^8.0.3",
+    "yargs": "^17.6.2"
+  },
+  "keywords": []
+}
