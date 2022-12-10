@@ -1,8 +1,6 @@
-# RenderForm CLI
-
-## What it does?
-
 ## Usage
+
+![How to render image](/readme/rendering.gif)
 
 Create a JSON file in `my-directory` folder and name it `sample.json`.
 
@@ -29,6 +27,8 @@ npx @renderform/cli --template <YOUR_TEMPLATE> --apiKey <YOUR_API_KEY> ./my-dire
 ```
 
 The CLI will look for all JSON files in the directory and will create a new image or PDF file for each JSON file with the same name but with the corresponding extension.
+
+![Sample output](/readme/my-blog-post.jpg)
 
 ## Options
 
