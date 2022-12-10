@@ -146,10 +146,14 @@ const renderImage = async (
   try {
     await execute();
     console.log(greenBright("Finished!"));
-    console.log("");
     process.exit(0);
   } catch (e) {
-    console.log(e);
+    console.log("");
+    console.log(e.message);
+    const data = e?.response?.data || "";
+    if (data) {
+      console.log(data);
+    }
     process.exit(1);
   }
 })();

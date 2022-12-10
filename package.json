@@ -1,7 +1,7 @@
 {
-  "name": "renderform-cli",
+  "name": "@renderform/cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Render images via command line",
   "files": [
     "bin/",
     "dist/"
@@ -13,10 +13,9 @@
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && ./credentials.sh && node ./dist/cli.js --template $RF_TEMPLATE --apiKey $RF_API_KEY --no-cache --overwrite ."
   },
-  "author": "Jakub Pomykała <jakub@jpomykala.com>",
+  "author": "Jakub Pomykała <contact@renderform.io>",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^8.0.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3",
     "@types/node": "^18.11.10",
