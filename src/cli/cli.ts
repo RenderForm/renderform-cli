@@ -29,7 +29,6 @@ const EXTENSIONS = [
 ];
 
 const execute = async () => {
-  console.log(bold("RenderForm CLI working..."));
   const directory = argv._[argv._.length - 1];
   if (!directory) {
     console.log("No directory provided");
@@ -50,7 +49,7 @@ const processJsonFile = async (filePath: string) => {
   const fileRaw = fs.readFileSync(filePath, "utf8");
   const jsonFile = JSON.parse(fileRaw);
 
-  const isRenderFormFile = jsonFile.hasOwnProperty("renderform");
+  const isRenderFormFile = jsonFile?.renderform || false;
   if (!isRenderFormFile) {
     return;
   }
