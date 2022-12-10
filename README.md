@@ -9,8 +9,8 @@ Create a JSON file in `my-directory` folder and name it `sample.json`.
   "renderform": true,
   "changes": [
     {
-      "id": "my_title",
-      "text": "My title"
+      "id": "my_title", // 'my_title' is the component id
+      "text": "My title" // 'text' is the component property
     },
     {
       "id": "my_image",
