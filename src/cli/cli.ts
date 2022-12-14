@@ -16,6 +16,10 @@ const argv = yargs(hideBin(process.argv))
   .boolean("overwrite")
   .boolean("debug").argv;
 
+interface KeyValueData {
+  [key: string]: string;
+}
+
 const EXTENSIONS = [
   "png",
   "jpg",
@@ -76,14 +80,14 @@ const processJsonFile = async (filePath: string) => {
   }
   process.stdout.write(greenBright("Render: ") + filePath);
   const template = argv.template;
-  const changes = jsonFile.changes;
+  const templatePropertyValues = jsonFile.data;
 
   if (argv.debug) {
     console.log("Template: " + template);
-    console.log("Changes: " + JSON.stringify(changes));
+    console.log("Changes: " + JSON.stringify(templatePropertyValues));
   }
 
-  const imageUrl = await renderImage(template, changes);
+  const imageUrl = await renderImage(template, templatePropertyValues);
   const imageData = await downloadImage(imageUrl);
   const imageFileExtension = path.extname(imageUrl);
   const savePath = fileDirectory + "/" + jsonFileName + imageFileExtension;
@@ -108,11 +112,11 @@ const saveImage = async (imageData: stream, outputPath: string) => {
 
 const renderImage = async (
   template: string,
-  changes: object[]
+  data: KeyValueData
 ): Promise<string> => {
   const requestBody = {
     template,
-    changes,
+    data,
   };
 
   if (!argv.cache) {
@@ -129,7 +133,7 @@ const renderImage = async (
   }
 
   const responseRender = await axios.post(
-    "https://get.renderform.io/api/v1/render",
+    "https://get.renderform.io/api/v2/render",
     requestBody,
     { headers }
   );

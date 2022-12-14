@@ -7,14 +7,10 @@ Create a JSON file in `my-directory` folder and name it `sample.json`.
 ```json
 {
   "renderform": true,
-  "changes": [
+  "data": [
     {
-      "id": "my_title", // 'my_title' is the component id
-      "text": "My title" // 'text' is the component property
-    },
-    {
-      "id": "my_image",
-      "src": "https://example.com/image.png"
+      "my_title.text": "My title", // 'my_title.text' is a template property from Form Editor (Preview popup)
+      "my_image.src": "https://example.com/image.png"
     }
   ]
 }
@@ -23,7 +19,7 @@ Create a JSON file in `my-directory` folder and name it `sample.json`.
 Then run the command:
 
 ```bash
-npx @renderform/cli --template <YOUR_TEMPLATE> --apiKey <YOUR_API_KEY> ./my-directory
+npx @renderform/cli@1.1.0 --template <YOUR_TEMPLATE> --apiKey <YOUR_API_KEY> ./my-directory
 ```
 
 The CLI will look for all JSON files in the directory and will create a new image or PDF file for each JSON file with the same name but with the corresponding extension.
