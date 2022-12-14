@@ -19,7 +19,7 @@ Create a JSON file in `my-directory` folder and name it `sample.json`.
 Then run the command:
 
 ```bash
-npx @renderform/cli@1.1.0 --template <YOUR_TEMPLATE> --apiKey <YOUR_API_KEY> ./my-directory
+npx @renderform/cli@1.1.1 --template <YOUR_TEMPLATE> --apiKey <YOUR_API_KEY> ./my-directory
 ```
 
 The CLI will look for all JSON files in the directory and will create a new image or PDF file for each JSON file with the same name but with the corresponding extension.
