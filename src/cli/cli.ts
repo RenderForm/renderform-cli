@@ -84,7 +84,7 @@ const processJsonFile = async (filePath: string) => {
 
   if (argv.debug) {
     console.log("Template: " + template);
-    console.log("Changes: " + JSON.stringify(templatePropertyValues));
+    console.log("Data: " + JSON.stringify(templatePropertyValues));
   }
 
   const imageUrl = await renderImage(template, templatePropertyValues);
